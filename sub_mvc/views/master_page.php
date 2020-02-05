@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <div class="loader">
         <img src="<?php echo $data['url'] ?>public/images/loading-spinner.gif" alt="loading...">
     </div>
@@ -31,7 +32,7 @@
             <!--START LOGO-->
             <div class="col-md-4 d-none d-md-block ">
                 <div class="lolgo">
-                    <a href="./">
+                    <a href="<?php echo $data['url'] ?>">
                         <img src="<?php echo $data['url'] ?>public/images/galaxy-logo.jpg">
                     </a>
                 </div>
@@ -46,12 +47,13 @@
             <!--END LOGO-->
             <!--SEARCH FORM-->
             <div class="col-md-8 col-8 pl-5 d-md-flex justify-content-between ">
-                <form id="search-form d-flex" class="border rounded py-md-2 bg-white px-md-3 d-none d-md-block">
-                    <input placeholder="Tìm tên phim, diễn viên..." class="border-0">
+                <div id="search-form d-flex" class="search-form border rounded py-md-2 bg-white px-md-3 d-none d-md-block">
+                    <input name="search_text" id="search_text" placeholder="Tìm tên phim, diễn viên..." class="border-0">
                     <button type="submit" class="bg-transparent border-0">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
-                </form>
+                </div>
+                <div class="search_result" id="search_result"></div>
                 <nav class="nav float-right float-md-none">
                     <a class="nav-link active text-secondary " data-toggle="modal" data-target="#exampleModalCenter">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -69,9 +71,9 @@
     <!-- menu list  -->
     <?php require_once "./sub_mvc/views/blocks/menu.php" ?>
     <!-- menu list ends  -->
-    <?php require_once "./sub_mvc/views/pages/" . $data['page'] . ".php"    ?>
+   
     <!-- body content -->
-
+    <?php require_once "./sub_mvc/views/pages/" . $data['page'] . ".php"    ?>
     <!-- body content ends -->
 
     <!-- footer -->
@@ -138,5 +140,6 @@
 <script src="<?php echo $data['url'] ?>public/css/popper.min.js"></script>
 <script src="<?php echo $data['url'] ?>public/css/bootstrap.min.js"></script>
 <script src="<?php echo $data['url'] ?>public/js/ajax.js"></script>
+<script src="<?php echo $data['url'] ?>public/js/search_ajax.js"></script>
 
 </html>

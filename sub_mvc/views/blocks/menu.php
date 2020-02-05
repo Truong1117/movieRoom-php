@@ -1,7 +1,7 @@
 <div class="container-fluid bg-dark">
     <nav class="d-none d-md-block">
         <ul class=" d-flex nav justify-content-between px-5 py-1">
-            <li><a class="nav-link active" href="Lichchieu">MUA VÉ</a></li>
+            <li><a class="nav-link active" href="<?php echo $data['url'] ?>Lichchieu">MUA VÉ</a></li>
             <!-- LIST MOVIE-->
             <li class="sub-movie">
                 <a class="nav-link botarrow" href="#">PHIM</a>
@@ -12,7 +12,7 @@
                         <div class="row mx-0 submenu-title">
                             <div class="col-12">
                                 <h3>
-                                    <a href="#">Phim đang chiếu</a>
+                                    <a href="<?php echo $data['url'] ?>Phim/Phimdangchieu">Phim đang chiếu</a>
                                 </h3>
                                 <div class="divider">
 
@@ -63,7 +63,7 @@
                         <div class="row mx-0 submenu-title">
                             <div class="col-12">
                                 <h3>
-                                    <a href="#">Phim sắp chiếu</a>
+                                    <a href="<?php echo $data['url'] ?>Phim/Phimsapchieu">Phim sắp chiếu</a>
                                     <div class="divider"></div>
                                 </h3>
                             </div>
@@ -118,7 +118,7 @@
 
             <!--START LIST GÓC ĐIỆN ẢNH-->
             <li class="sub-film">
-                <a class="nav-link botarrow" href="#">GÓC ĐIỆN ẢNH</a>
+                <a class="nav-link botarrow" href="<?php echo $data['url'] ?>Gocdienanh">GÓC ĐIỆN ẢNH</a>
                 <ul class="sub-menu-film">
                     <li><a href="">thể loại phim</a></li>
                     <li><a>diễn viên</a></li>
@@ -130,16 +130,16 @@
             <!--END LIST GÓC ĐIỆN ẢNH-->
             <!--START LIST SỰ KIỆN-->
             <li class="sub-film">
-                <a class="nav-link botarrow active" href="#">SỰ KIỆN</a>
+                <a class="nav-link botarrow active" href="<?php echo $data['url'] ?>Sukien">SỰ KIỆN</a>
                 <ul class="sub-menu-even">
                     <li><a href="">ưu đãi</a></li>
                     <li><a>phim hay tháng</a></li>
                 </ul>
             </li>
             <!--END LIST SỰ KIỆN-->
-            <li><a class="nav-link" href="">RẠP/GIÁ VÉ</a></li>
-            <li><a class="nav-link" href="#">HỖ TRỢ</a></li>
-            <li><a class="nav-link" href="#">THÀNH VIÊN</a></li>
+            <li><a class="nav-link" href="<?php echo $data['url'] ?>Rap_Giave">RẠP/GIÁ VÉ</a></li>
+            <li><a class="nav-link" href="<?php echo $data['url'] ?>Hotro">HỖ TRỢ</a></li>
+            <li><a class="nav-link" href="<?php echo $data['url'] ?>Thanhvien">THÀNH VIÊN</a></li>
         </ul>
     </nav>
 </div>

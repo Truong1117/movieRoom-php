@@ -50,6 +50,17 @@
                 }
             });
         });
+        
+        $("#loginBuyTicket").click(function(){
+            var home_dayTime_list = $('#home-dayTime-list').val();
+            var home_room_code = $('#home-room-list').val();
+            var home_movie_code = $('#home-movie-list').val();
+            if (home_dayTime_list == ''){
+                alert("Bạn chưa chọn suất!");
+            }else{
+                location.replace("Muave/BuyTicket/code_movie=home_movie_code&code_room=home_room_code");
+            }
+        });
     });
        
 //End Page Home

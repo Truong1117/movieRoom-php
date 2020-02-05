@@ -93,8 +93,8 @@
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
                         </div>
-                        <div class="box-header mr-3" style="float: right">
-                            <p>Mua vé</p>
+                        <div id="loginBuyTicket" name="loginBuyTicket" class="box-header mr-3" style="float: right">
+                            <a  class="text-white">Mua vé</a>
                         </div>
                     </section>
                 </div>
