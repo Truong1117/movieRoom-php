@@ -1,10 +1,10 @@
 $(document).ready(function(){
     $('#search_text').keyup(function(){
         var search_txt = $(this).val();
-        if ( event.which == 13 ) {
-            url = "Phim/getView" + search_txt;
-            location.replace("Phim/getView");
-        }
+        // if ( event.which == 13 ) {
+        //     url = "Phim/GetMovieFollowKeyEnter/" + search_txt;
+        //     location.replace(url);
+        // }
         if(search_txt != ''){
             $.ajax({
                 url: "Searchmovie/GetMovie",

@@ -17,5 +17,15 @@ class Searchmovie extends Controller
         $this->Searchmovie->ListMovieFollowKey($_POST["search_key"]);
     }
 
-
+    // public function GetMovieFollowKeyEnter($enter_key)
+    // {
+    //     // $rs = $this->Searchmovie->ListMovieFollowKey($_POST["search_key"]);
+    //     $this->view("master_page", [
+    //         "page" => "phim_timkiem",
+    //         "url" => "../../",
+    //         "enter_key"=>$enter_key,
+    //         // "inforMovie"=>$rs,
+    //         // "title"=> "title",
+    //     ]);
+    // }
 }

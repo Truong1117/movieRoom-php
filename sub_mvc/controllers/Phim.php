@@ -15,7 +15,6 @@ class Phim extends Controller
         $this->view("master_page", [
             "page" => "phim_timkiem",
             "url" => "../",
-
         ]);
     }
     public function Information_Movie($slug_movie)

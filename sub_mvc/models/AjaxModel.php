@@ -71,7 +71,7 @@ class AjaxModel extends db
         $rs = mysqli_query($this->conn, $qr);
         if (mysqli_num_rows($rs) > 0) {
             while($row = mysqli_fetch_array($rs)){
-                $str_times = explode(",", $row["times"]);
+                $str_times = explode(",",$row["times"]);
                 $output .= '<li class="times-list" style="cursor: auto; background:none" >
                             <div class="container-fuild">
                                 <p id="dateTimeRoom" class="text-uppercase pb-3" >' . $row["date"] . '</p>
@@ -79,7 +79,7 @@ class AjaxModel extends db
                                 <p class="col-md-3" id="typeMovie" class="text-uppercase" >' . $row["type"] . '</p>';
                 $output .= '<div class="col-md-9">';
                 foreach($str_times as $value){
-                    $output .= '<a class="col-md-4" href="#" data-movie="'.$code_movie.'" data-room="'.$code_room.'" data-time="'.$value.'"><span id="timeRoomMovie">'.$value.'</span></a>';
+                    $output .= '<a class="col-md-4" href="Muave/BuyTicket/?'.$code_movie.'&'.$code_room.'&'.$row["date"].'&'.trim($value," ").'" data-movie="'.$code_movie.'" data-room="'.$code_room.'" data-time="'.$value.'"><span id="timeRoomMovie">'.$value.'</span></a>';
                 }
                 $output .= '</div>
                             </div>

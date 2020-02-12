@@ -52,13 +52,16 @@
         });
         
         $("#loginBuyTicket").click(function(){
-            var home_dayTime_list = $('#home-dayTime-list').val();
-            var home_room_code = $('#home-room-list').val();
-            var home_movie_code = $('#home-movie-list').val();
+            var home_dayTime_list = $('#home-dayTime-list').val().trim();
+            var home_room_code = $('#home-room-list').val().trim();
+            var home_movie_code = $('#home-movie-list').val().trim();
+            var home_day = $('#home-day-list').val().trim();
             if (home_dayTime_list == ''){
                 alert("Bạn chưa chọn suất!");
             }else{
-                location.replace("Muave/BuyTicket/code_movie=home_movie_code&code_room=home_room_code");
+                var url_ticket = "?" + home_movie_code + "&" + home_room_code + "&" + home_day + "&" +home_dayTime_list;
+                var url = "Muave/BuyTicket/" + url_ticket;
+                location.replace(url);
             }
         });
     });

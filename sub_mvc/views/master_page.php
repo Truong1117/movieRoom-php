@@ -141,5 +141,7 @@
 <script src="<?php echo $data['url'] ?>public/css/bootstrap.min.js"></script>
 <script src="<?php echo $data['url'] ?>public/js/ajax.js"></script>
 <script src="<?php echo $data['url'] ?>public/js/search_ajax.js"></script>
+<script src="<?php echo $data['url'] ?>public/js/buyticket_ajax.js"></script>
+<script src="<?php echo $data['url'] ?>public/js/jautocalc.js"></script>
 
 </html>
