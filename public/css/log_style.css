@@ -1,0 +1,190 @@
+body .login-container {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid white;
+  width: 600px;
+  margin: 50px 450px;
+  padding: 30px;
+}
+
+.login-container .close:hover{
+  cursor: pointer;
+  color: #e26435;
+};
+ul li {
+  list-style: none;
+}
+.nav > li {
+    position: relative;
+    display: block;
+  }
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+  }
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.log_display {
+  display: none;
+}
+.tab-login-line .nav-tabs {
+  border-bottom: none;
+  margin-bottom: 4px;
+}
+.tab-login-line .nav-tabs li {
+  margin-right: 20px;
+}
+.tab-login-line .nav-tabs li > a {
+  border: none;
+  color: #a0a3a7;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 400;
+  padding: 10px 0;
+}
+.tab-login-line .nav-tabs li > a.active {
+    color: #e26435;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: #e26435 2px solid;
+  }
+.tab-login-line .nav-tabs li > a:hover {
+  color: #e26435;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: #e26435 2px solid;
+}
+
+.tab-login-line #tab-login .login-tab-wrapper{
+    margin:20px 0;
+}
+
+.login-form input.login {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #ced0da;
+  color: #43464b;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.login-form input.login:first-child{
+    margin: 20px 0px 10px 0;
+  }
+
+.login-form .login-remember .forget-pass {
+    padding-top:14px;
+  }
+.login-form .login-remember .forget-pass a {
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  color: #a0a3a7;
+  cursor: pointer;
+}
+.login-form .login-remember .forget-pass a#forgetPass:hover {
+    color: #e26435;
+    text-decoration: none;
+}
+.login-form .login-remember .forget-pass a#noteSignup span {
+    color: #e26435;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+  .login-form .btn.primary.input{
+    width: 100%;
+    margin:14px 0;
+  }
+  .login-form .btn.primary {
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #f26b38;
+    padding: 15px;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.login-form .btn.primary:hover {
+    background-color: #e26435;
+}
+
+.login-form div#messerrorSignup {
+  margin: 14px 0;
+  font-size: 18px;
+  line-height: 1;
+}
+.login-form div#errorLogin {
+  margin: 14px 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.dropdown{
+  position: relative;
+}
+.dropdown.open>a.nav-link{
+  color: #e26435 !important;
+}
+
+.dropdown .dropdown-menu {
+  border-radius: 0;
+  min-width: 150px;
+  margin: 6px 0 0;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  clear: both;
+  font-weight: 400;
+  color: #a0a3a7 !important;
+  text-align: inherit;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+}
+.dropdown-menu .dropdown-item:hover {
+  color: #e26435 !important;
+  cursor: pointer;
+}

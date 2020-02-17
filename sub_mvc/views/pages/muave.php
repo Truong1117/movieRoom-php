@@ -8,7 +8,7 @@
                             <section ng-show="select-ticket" class="booking-ticket">
                                 <h2 id="choose-ticket-food" class="booking-title">Chọn vé/thức ăn</h2>
                                 <div class="table-responsive">
-                                    <table class="booking-ticket-table">
+                                    <table class="booking-ticket-table buy-ticket">
                                         <thead>
                                             <tr>
                                                 <th>Loại vé</th>
@@ -18,46 +18,48 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="item in items">
-                                                <td>
-                                                    <p>
-                                                        <b class="ng-binding">Người lớn</b>
-                                                    </p>
-                                                    <p class="des-corn ng-binding">Vé 2D</p>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group input-booking">
-                                                        <span class="input-group-btn">
-                                                            <button type="button" class="btn btn-addminus minus-btn">
-                                                                <span><i class="fa fa-minus-circle" aria-hidden="true"></i></span>
-                                                            </button>
-                                                        </span>
-                                                        <input style="width: 60px" type="number" class="input-number">
-                                                        <span class="input-group-btn">
-                                                            <button type="button" class="btn btn-addminus plus-btn">
-                                                                <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
-                                                            </button>
-                                                        </span>
-                                                    </div>
+                                            <?php
+                                            while ($ticket = mysqli_fetch_array($data["inforTicket"])) {
+                                            ?>
+                                                <tr ng-repeat="item in items">
+                                                    <td>
+                                                        <p>
+                                                            <b class="ng-binding"><?php echo $ticket["name_ticket"]?></b>
+                                                        </p>
+                                                        <p class="des-corn ng-binding"><?php echo $ticket["detail_ticket"]?></p>
+                                                    </td>
+                                                    <td>
+                                                        <div class="input-group input-booking">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-addminus minus-btn">
+                                                                    <span><i class="fa fa-minus-circle" aria-hidden="true"></i></span>
+                                                                </button>
+                                                            </span>
+                                                            <input style="width: 60px" type="number" class="input-number">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-addminus plus-btn">
+                                                                    <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
+                                                                </button>
+                                                            </span>
+                                                        </div>
 
-                                                </td>
-                                                <td>a</td>
-                                                <td>b</td>
-                                            </tr>
-                                            <!-- <tr ng-repeat="item in items" class="ng-scope">
-                                                <td>Ghế đôi</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr> -->
+                                                    </td>
+                                                    <td><input class="input-price" id="input-price" name="input-price" value="<?php echo $ticket["price_ticket"] ?>" style="width: 60px;border:none; background:transparent" disabled type="text"></td>
+                                                    <td><input type="text" class="item-total-ticket" name="item-total" value="" style="width: 60px;border:none; background:transparent" disabled placeholder="0"></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                            ?>
                                         </tbody>
                                         <tr class="total">
                                             <td colspan="3" class="ng-binding">Tổng</td>
-                                            <td class="ng-binding">0</td>
+                                            <td class="ng-binding">
+                                            <input type="text" class="total-money-buy-ticket" placeholder="0" name="total_money_buy" style="width:60px;color: #f26b38;border:none; background:transparent" disabled>
+                                            </td>
                                         </tr>
                                     </table>
 
-                                    <table class="booking-ticket-table">
+                                    <table class="booking-ticket-table buy-food">
                                         <thead>
                                             <tr>
                                                 <th>Combo</th>
@@ -67,36 +69,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- <tr ng-repeat="item in items" class="ng-scope">
-                                                <td>
-                                                    <div class="food-item row">
-                                                        <div class="img-food-item col-md-3">
-                                                            <img src="" alt="">
-                                                        </div>
-                                                        <div class="name-food-item col-md-9">
-                                                            <p></p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="input-group input-booking">
-                                                        <span class="input-group-btn">
-                                                            <button type="button" ng-disabled="item.defaultQuantity==0" class="btn btn-addminus" ng-click="addSeat($index,false)" disabled="disabled">
-                                                                <span><i class="fa fa-minus-circle" aria-hidden="true"></i></span>
-                                                            </button>
-                                                        </span>
-                                                        <input style="width: 60px" type="text">
-                                                        <span class="input-group-btn">
-                                                            <button type="button" class="btn btn-addminus" ng-disabled="item.defaultQuantity==maxSeat" ng-click="addSeat($index,true)">
-                                                                <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
-                                                            </button>
-                                                        </span>
-                                                    </div>
-
-                                                </td>
-                                                <td>a</td>
-                                                <td>b</td>
-                                            </tr> -->
                                             <?php
                                             while ($food = mysqli_fetch_array($data["inforFood"])) {
                                             ?>
@@ -125,23 +97,17 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <input class="input-price" id="input-price" name="input-price" value="<?php echo $food["price_food"]?>" style="width: 60px;border:none; background:transparent" disabled type="text" >
+                                                        <input class="input-price" id="input-price" name="input-price" value="<?php echo $food["price_food"] ?>" style="width: 60px;border:none; background:transparent" disabled type="text">
                                                     </td>
-                                                    <td><input type="text" class="item-total" name="item-total" value="" style="width: 60px;border:none; background:transparent" disabled></td>
+                                                    <td><input type="text" class="item-total" name="item-total" value="" style="width: 60px;border:none; background:transparent" disabled placeholder="0"></td>
                                                 <?php
                                             }
                                                 ?>
-                                                <!-- <tr ng-repeat="item in items" class="ng-scope">
-                                                <td>Ghế đôi</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr> -->
                                         </tbody>
                                         <tr class="total">
                                             <td colspan="3" class="ng-binding">Tổng</td>
                                             <td class="ng-binding">
-                                            <input type="text" class="total-money-buy" name="total_money_buy">
+                                                <input type="text" class="total-money-buy" placeholder="0" name="total_money_buy" style="width:60px;color: #f26b38;border:none; background:transparent" disabled>
                                             </td>
                                         </tr>
                                     </table>

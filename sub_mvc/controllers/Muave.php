@@ -9,6 +9,7 @@ class Muave extends Controller
         $this->Muave = $this->model("MuaveModel");
         $this->InforMovie = $this->model("InformovieModel");
         $this->InforFood = $this->model("FoodModel");
+        $this->InforTicket = $this->model("TicketModel");
     }
 
     public function BuyTicket()
@@ -22,6 +23,7 @@ class Muave extends Controller
         //$arr_ticket[1] = code_room;
         //$arr_ticket[2] = date;
         //$arr_ticket[3] = timeDate;
+        $inforTicket = $this->InforTicket->getInforTicket();
         $inforFood = $this->InforFood->getInforFood();
         $inforMovie = $this->InforMovie->GetInforMovieFollowCode($arr_ticket[0]);
         //inforMovie has name_movie :: image_movie:: date_movie
@@ -31,6 +33,7 @@ class Muave extends Controller
         $this->view("master_page", [
             "page" => "muave",
             "url" => "../../",
+            "inforTicket" => $inforTicket,
             "inforFood" => $inforFood,
             "inforMovie" => $inforMovie,
             "nameRoom" => $nameRoom,

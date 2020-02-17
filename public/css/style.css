@@ -637,6 +637,10 @@ table > thead > tr > th {
 }
 /*END CSS PAGE MOVIE */
 
+/*START CSS PAGE HOME */
+
+/*END CSS PAGE HOME */
+
 /*START CSS PAGE SEARCH MOVIE */
 .container-fluid .row .search-bar {
   text-align: center;
@@ -767,6 +771,11 @@ table > thead > tr > th {
 
 
 .booking-ticket-table > tbody > tr > td {
+  border-top: none;
+  text-align: right;
+  vertical-align: middle;
+}
+.booking-ticket-table > tbody > tr > td input {
   border-top: none;
   text-align: right;
   vertical-align: middle;
